@@ -30,7 +30,7 @@ def build_train_data(file_path):
         pkl.dump(sum_list, f)
 
 
-# 准备标签数据(B:begin,M:middle,E:end,S:solo)
+# 准备标签数据(B:begin,M:median,E:end,S:single)
 def build_target(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         tmp = f.readlines()
