@@ -3,7 +3,7 @@
 训练分词模型
     1-模型参数 Config
     2-前馈网络模型 Model
-    3-测试模型 model_eval
+    3-评估模型 model_eval
 
     4：训练及测试过程: main
 """
@@ -105,9 +105,9 @@ def test(model_):
 
 
 if __name__ == '__main__':
-    model = torch.load('cut.bin')
-    test(model)
-    sys.exit()  # 测试分词效果
+    # model = torch.load('cut.bin')
+    # test(model)
+    # sys.exit()  # 测试分词效果
 
     torch.manual_seed(1)
     print(torch.cuda.is_available())  # 判断是否存在GPU可用，存在返回True
