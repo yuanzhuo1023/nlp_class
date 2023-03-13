@@ -32,13 +32,13 @@ class Config(object):
 
 class Model(nn.Module):
     """
-    结构: input->嵌入层->隐藏层->输出层->output
+    结构: input->{输入层->隐藏层->输出层}->output
     """
     def __init__(self, output_size, vocab_size, embed_dim):
         super(Model, self).__init__()
         self.hid_layer = nn.Linear(embed_dim, 64)  # 隐藏层
         self.out_layer = nn.Linear(64, output_size)  # 输出层
-        self.embedding = nn.Embedding(vocab_size, embed_dim)  # 嵌入层
+        self.embedding = nn.Embedding(vocab_size, embed_dim)  # 嵌入表示，把文本表示成向量
 
     def forward(self, in_layer):
         emd = self.embedding(in_layer)
