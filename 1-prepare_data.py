@@ -3,11 +3,10 @@
 数据准备
     1.准备训练数据
     2.准备标签数据
-    3.准备词表
+    3.生成词表
 """
 
 import pickle as pkl
-import time
 
 
 # 准备训练数据
