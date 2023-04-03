@@ -13,20 +13,6 @@ import time
 from functools import wraps
 
 
-# def fn_timer(function):
-#     @wraps(function)
-#     def function_timer(*args, **kwargs):
-#         t0 = time.time()
-#         result = function(*args, **kwargs)
-#         t1 = time.time()
-#         print("Total time running %s: %s seconds" %
-#               (function.func_name, str(t1 - t0))
-#               )
-#         return result
-#
-#     return function_timer
-
-
 def pre_process():
     # 加载数据 sum_list2是训练用的句子 stopwords是停用词
     with open('data/msr_training.utf8', 'r', encoding='utf-8') as f:
@@ -94,7 +80,6 @@ def train(words, vocab):
             total_loss += loss.item()
         losses.append(total_loss)
         torch.save(model, 'data/CBOW.bin')
-        [print(i / len(train_cbow)) for i in losses]
 
 
 if __name__ == '__main__':
