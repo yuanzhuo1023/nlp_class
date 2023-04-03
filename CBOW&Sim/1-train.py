@@ -1,4 +1,7 @@
 # coding=utf8
+'''
+训练一个CBOW模型
+'''
 import torch
 import torch.nn as nn
 import torch.optim as opt
