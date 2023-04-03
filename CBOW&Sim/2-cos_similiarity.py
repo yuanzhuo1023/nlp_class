@@ -1,3 +1,6 @@
+'''
+使用训练的CBOW模型进行相似度计算
+'''
 import torch
 import pickle as pkl
 import jieba
