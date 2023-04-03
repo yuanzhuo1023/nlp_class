@@ -1,3 +1,6 @@
+'''
+调用训练好的CBOW模型进行语义相似度计算
+'''
 import torch
 import pickle as pkl
 import jieba
