@@ -98,12 +98,12 @@ def train(words, vocab):
 
 
 if __name__ == '__main__':
-    # words_, vocab_ = pre_process()  # 预处理数据
-    # # 将处理过的数据以pkl格式保存
-    # with open('data/words.pkl', 'wb') as f:
-    #     pkl.dump(words_, f)
-    # with open('data/vocab.pkl', 'wb') as f:
-    #     pkl.dump(vocab_, f)
+    words_, vocab_ = pre_process()  # 预处理数据
+    # 将处理后的数据以pkl格式保存
+    with open('data/words.pkl', 'wb') as f:
+        pkl.dump(words_, f)
+    with open('data/vocab.pkl', 'wb') as f:
+        pkl.dump(vocab_, f)
 
     # 从pkl文件中读取数据
     with open('data/words.pkl', 'rb') as f:
