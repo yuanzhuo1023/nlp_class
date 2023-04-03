@@ -13,7 +13,7 @@ def get_word_embed(sentence):
     return wd_tensors
 
 
-def test():
+def test_():
     # 准备数据
     sentences1 = '海啸发生在当地时间１７日晚８时许，由在该国北海岸发生的一次地震引发。'
     sentences2 = '这次海啸是由在该国北海岸发生的一次里氏７级海底地震引发的。'
@@ -80,4 +80,4 @@ def test():
 
 
 if __name__ == '__main__':
-    test()
+    test_()
