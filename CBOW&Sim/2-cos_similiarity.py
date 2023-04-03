@@ -15,7 +15,7 @@ def get_word_embed(sentence):
 
 def test():
     # 准备数据
-    sentences1 = '海啸发生在当地时间１７日晚８时许。'
+    sentences1 = '海啸发生在当地时间１７日晚８时许，由在该国北海岸发生的一次地震引发。'
     sentences2 = '这次海啸是由在该国北海岸发生的一次里氏７级海底地震引发的。'
     sentences3 = '韩日元贬值还使东南亚国家的出口严重受挫。'
     sents = [sentences1, sentences2, sentences3]
@@ -69,12 +69,12 @@ def test():
     print('词语2和词语3的相似度是：{}'.format(sim_wd2.item()))
 
     odis = torch.nn.PairwiseDistance(p=2)
-    odis_sen1 = odis(sent_embed[0].view(1, -1), sent_embed[1].view(1, -1))
-    odis_sen2 = odis(sent_embed[0].view(1, -1), sent_embed[2].view(1, -1))
+    odis_sen1_2 = odis(sent1, sent2)
+    odis_sen2_3 = odis(sent2, sent3)
     odis_wd1 = odis(word_embed[0].view(1, -1), word_embed[2].view(1, -1))
     odis_wd2 = odis(word_embed[1].view(1, -1), word_embed[2].view(1, -1))
-    print('句子1和句子2的欧式距离是：{}'.format(odis_sen1.item()))
-    print('句子2和句子3的欧氏距离是：{}'.format(odis_sen2.item()))
+    print('句子1和句子2的欧式距离是：{}'.format(odis_sen1_2.item()))
+    print('句子2和句子3的欧氏距离是：{}'.format(odis_sen2_3.item()))
     print('词语1和词语2的欧氏距离是：{}'.format(odis_wd1.item()))
     print('词语2和词语3的欧氏距离是：{}'.format(odis_wd2.item()))
 
